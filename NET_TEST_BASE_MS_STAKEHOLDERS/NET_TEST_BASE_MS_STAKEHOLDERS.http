@@ -1,0 +1,6 @@
+@NET_TEST_BASE_MS_STAKEHOLDERS_HostAddress = http://localhost:5295
+
+GET {{NET_TEST_BASE_MS_STAKEHOLDERS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

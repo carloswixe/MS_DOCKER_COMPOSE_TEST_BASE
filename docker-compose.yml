@@ -1,0 +1,45 @@
+#creo mi red especial para este caso
+networks:
+  mytestnetwork:
+    driver: bridge
+
+#agregamos los servicios
+services:
+  #bajamos y configuramos la imagen de SqlServer para nuestro proyecto
+  sqlserverdocker:
+    container_name: sql-server-docker
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports: #si se requiere conectar al sql server bindeamos un puerto se salida
+        - 8006:1433
+    environment:
+        - ACCEPT_EULA=Y
+        - MSSQL_SA_PASSWORD=Bbase09Xd+
+    networks:
+        - mytestnetwork
+  #agregamos nuestro proyecto de API pagos
+  net_test_base:
+    image: ${DOCKER_REGISTRY-}nettestbase
+    build:
+      context: .
+      dockerfile: NET_TEST_BASE/Dockerfile
+    #agregamos la red, la dependiencia y los puertos
+    networks:
+        - mytestnetwork
+    depends_on:
+        - sqlserverdocker
+    ports:
+        - 5001:8081
+  
+  net_test_base_ms_stakeholders:
+    image: ${DOCKER_REGISTRY-}nettestbasemsstakeholders
+    build:
+      context: .
+      dockerfile: NET_TEST_BASE_MS_STAKEHOLDERS/Dockerfile
+    #agregamos la red, la dependiencia y los puertos
+    networks:
+        - mytestnetwork
+    depends_on:
+        - sqlserverdocker
+    ports:
+        - 5002:8081
+

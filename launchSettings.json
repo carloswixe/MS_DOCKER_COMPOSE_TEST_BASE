@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "net_test_base": "StartDebugging",
+        "test_application": "StartDebugging",
+        "net_test_base_ms_stakeholders": "StartDebugging"
+      }
+    }
+  }
+}
