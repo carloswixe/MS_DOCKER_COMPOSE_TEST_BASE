@@ -9,7 +9,6 @@ EXPOSE 8081
 
 # Añadir variables de entorno
 ENV ASPNETCORE_ENVIRONMENT=Production
-#ENV ConnectionStrings__DefaultConnection="Server=localhost\\SQLEXPRESS;Database=PagosDB;User Id=sa;Password=Pkt1123$;TrustServerCertificate=True;"
 ENV ConnectionStrings__DefaultConnection="Server=sqlserverdocker;Database=PagosDB;User Id=sa;Password=Bbase09Xd+;TrustServerCertificate=True;"
 
 
