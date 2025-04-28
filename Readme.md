@@ -24,7 +24,7 @@ Las URL a las cuales se pueden acceder a los microservicios:
 https://localhost:5001/swagger/index.html (MS PAGOS con consulta de bitacora) 
 https://localhost:5002/swagger/index.html (MS DE Alta de Ordenantes y Beneficiarios )
 
-El proyecto NET_TEST_BASE_WCF, debe coorerse en depuracion una ves levantada la base de de datos SQLServer en el contenedor docker
+El proyecto NET_TEST_BASE_WCF, debe correrse en depuracion una ves levantada la base de de datos SQLServer en el contenedor docker
 una ves en depuracion, puedes encontrar este proyecto en la siguiente URL:
 http://localhost:53342/PagoService.svc
 En este proyect encontraran interfaces para las operaciones principales de pagos, dar de alta beneficiarios y Ordenantes desde el microservico destinado para estas operaciones
